@@ -1,0 +1,216 @@
+body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+.circle {
+    position: fixed; /* Fixiert den Kreis in der Ecke */
+    top: 35px; /* Abstand vom oberen Rand */
+    right: 40px; /* Abstand vom rechten Rand */
+    width: 15px; /* Breite des Kreises */
+    height: 15px; /* Höhe des Kreises (gleich wie Breite für Kreisform) */
+    background-color: black; /* Farbe des Kreises */
+    border-radius: 50%; /* Runde Kanten für Kreis */
+    display: flex; /* Ermöglicht Zentrierung des Textes */
+    justify-content: center; /* Horizontale Zentrierung des Textes */
+    align-items: center; /* Vertikale Zentrierung des Textes */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Optional: Schatten für visuelle Tiefe */
+    font-family: Arial, sans-serif;
+    filter: blur(0.6px); /* Teletext-ähnlicher Verschwommeneffekt */
+    font-size: 9px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white; /* Gelbe Schrift */
+    cursor: pointer; /* Zeigt beim Hover an, dass der Kreis klickbar ist */
+    z-index: 999; /* Überlagert andere Inhalte */
+}
+
+.circle2 {
+    position: fixed; /* Fixiert den Kreis in der Ecke */
+    top: 35px; /* Abstand vom oberen Rand */
+    right: 20px; /* Abstand vom rechten Rand */
+    width: 15px; /* Breite des Kreises */
+    height: 15px; /* Höhe des Kreises (gleich wie Breite für Kreisform) */
+    background-color: black; /* Farbe des Kreises */
+    border-radius: 50%; /* Runde Kanten für Kreis */
+    display: flex; /* Ermöglicht Zentrierung des Textes */
+    justify-content: center; /* Horizontale Zentrierung des Textes */
+    align-items: center; /* Vertikale Zentrierung des Textes */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Optional: Schatten für visuelle Tiefe */
+    font-family: Arial, sans-serif;
+    filter: blur(0.6px); /* Teletext-ähnlicher Verschwommeneffekt */
+    font-size: 9px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white; /* Gelbe Schrift */
+    cursor: pointer; /* Zeigt beim Hover an, dass der Kreis klickbar ist */
+    z-index: 999; /* Überlagert andere Inhalte */
+}
+
+#container {
+    position: relative;
+    width: 100vw; 
+    height: 100vh; 
+}
+
+
+#svgWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+
+#svgObject {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: auto; /* oder auto, wenn du darin interagieren willst */
+}
+
+.custom-image {
+  position: absolute;
+  width: 40px;  /* Hier kannst du die Breite des Bildes anpassen */
+  cursor: pointer;
+  z-index: 1;
+  top: 44%;  /* Positioniert das Bild 20% von oben */
+  left: 60%; /* Positioniert das Bild 30% von links */
+}
+.blue-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+    border-radius: 50%;
+    z-index: 2;
+ 
+}
+
+
+
+#popup {
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    border: 2px solid #333;  /* Beispiel: Konturfarbe */
+    border-radius: 0px;
+    font-family: Arial, sans-serif;
+    z-index: 3;  /* Popup wird vor der Grafik angezeigt */
+    width: 400px;  /* Breite des Popups */
+    display: flex;  /* Flexbox für Bild und Text nebeneinander */
+    align-items: center;  /* Vertikale Ausrichtung der Inhalte */
+}
+
+
+.custom-image {
+    position: absolute;
+    z-index: 1;  
+    cursor: pointer; 
+}
+
+
+.close-button {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+}
+
+
+.popup-detail {
+    position: absolute;
+    background-color: white;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 0px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    display: none;  
+    z-index: 3;   
+}
+
+
+#popupQuellen {
+    background-color: #fff;  
+} 
+
+.close-button {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      width: 3px;
+      height: 3px;
+      background: black;
+      color: white;
+      border-radius: 50%;
+      display: flex; /* Ermöglicht Zentrierung des Textes */
+      justify-content: center; /* Horizontale Zentrierung des Textes */
+      align-items: center; /* Vertikale Zentrierung des Textes */
+      font-size: 9px;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+    }
+
+.text-unten-links {
+  position: fixed;
+  bottom: 6px;     /* Abstand vom unteren Rand */
+  left: 10px;       /* Abstand vom linken Rand */
+  color: blue;     /* Textfarbe */
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  filter: blur(0.6px);
+  z-index: 999;    /* damit es über anderem Inhalt liegt */
+}
+
+/* Stil für den Text unten links */
+.text-unten-links {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  color: black;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  cursor: pointer;
+  z-index: 1002;  /* Damit der Text vor anderen Inhalten liegt */
+}
+
+.ticker-leiste {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 30px;
+      background-color: black;
+      color: white;
+      overflow: hidden;
+      z-index: 1001;
+    }
+
+    .ticker-inhalt {
+      display: inline-block;
+      top: 2px;
+      font-weight: bold;
+      font-family: Bahnschrift, sans-serif;
+      white-space: nowrap;
+      padding-left: 100%;
+      animation: laufe 200s linear infinite;
+    }
+
+    @keyframes laufe {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
